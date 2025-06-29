@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Terminal</title>
+    <link rel="stylesheet" href="style/terminal_bass.css">
+    <link rel="stylesheet" href="style/CVstyle.css">
+</head>
+<body>
+
+    <!-- The Terminal Window -->
+    <div id="terminal">
+        <!-- Header with Mac-style buttons and title -->
+        <div class="terminal-header">
+            <div class="buttons">
+                <span class="btn red"></span>
+                <span class="btn yellow"></span>
+                <span class="btn green"></span>
+            </div>
+            <div class="title">shoron@portfolio: ~</div>
+        </div>
+
+        <!-- Main content area of the terminal -->
+        <div id="terminal-body">
+            <div class="terminal_content">
+                <p class="midiumfont">Welcome to Shohanur Rahman Shoron's Terminal! Type '<span class="redtext">help</span>' to see available commands.</p>
+                <div class="contentbox">
+                    <!-- text will appare here -->
+                    
+                </div>
+            </div>
+
+            <div class="inputbox">
+                <span class="midiumfont dir">shoron@portfolio: ~</span>
+                <input type="text" name="commands" id="commands" >
+            </div>
+        </div>
+        
+
+
+        <!-- The handle for resizing the terminal -->
+        <div class="resizer" id="resizer"></div>
+    </div>
+
+    <script src="js/cv.js" ></script>
+    <script src="js/terminal_bass.js"></script>
+</body>
+</html>
