@@ -70,21 +70,21 @@ document.addEventListener("mouseup", () => {
 // --- NEW COMMAND HANDLING LOGIC WITH BACKEND INTEGRATION ---
 // =======================================================================
 
-// Helper function to scroll the terminal body to the bottom
+
 function scrollToBottom() {
     terminalBody.scrollTop = terminalBody.scrollHeight;
 }
 
 commandInput.addEventListener('keydown', function(event) {
     if (event.key !== 'Enter') {
-        return; // Only process the Enter key
+        return;
     }
     
     event.preventDefault();
 
     const commandText = commandInput.value.trim();
     if (commandText === '') {
-        return; // Do nothing if the input is empty
+        return;
     }
 
     // --- 1. Echo the user's command to the terminal ---
@@ -95,7 +95,7 @@ commandInput.addEventListener('keydown', function(event) {
     
     commandInput.value = '';
     
-    scrollToBottom(); // SCROLL ADDED HERE (1)
+    scrollToBottom();
 
     // --- 2. Handle commands: frontend 'cls' or backend for everything else ---
     
@@ -134,7 +134,7 @@ function handleBackendCommand(command) {
     eventSource.onerror = function(err) {
         console.error("EventSource failed:", err);
         responseContainer.innerHTML += `<br><span class="redtext">Error: Could not connect to the command server.</span>`;
-        scrollToBottom(); // SCROLL ADDED HERE (3) - Also scroll on error
+        scrollToBottom();
         eventSource.close();
         commandInput.disabled = false;
         commandInput.focus();

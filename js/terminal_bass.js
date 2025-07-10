@@ -18,7 +18,7 @@ header.addEventListener("mousedown", (e) => {
     offsetX = e.clientX - terminal.offsetLeft;
     offsetY = e.clientY - terminal.offsetTop;
 
-    // Add a class to indicate dragging (optional, for styling)
+    // Add a class to indicate dragging
     terminal.classList.add("dragging");
 
     // Prevent default text selection behavior
@@ -118,7 +118,6 @@ commandInput.addEventListener('keydown', function(event) {
 
         // 4. Handle different commands to generate the correct output
         if (commandText.toLowerCase() === 'cv') {
-            // NOTE: Assuming you have a function named generateCvHtml()
             // If not, you should create it or replace this with your CV content.
             newContent.innerHTML = generateCvHtml();
 
@@ -134,7 +133,6 @@ commandInput.addEventListener('keydown', function(event) {
         commandInput.value = '';
 
         // 7. (FIXED) Automatically scroll the terminal to the bottom.
-        // We use setTimeout to wait for the DOM to update before scrolling.
         setTimeout(() => {
             terminalBody.scrollTop = terminalBody.scrollHeight;
         }, 0);
